@@ -1,0 +1,57 @@
+<p>test works!</p>
+
+<h1 class="bg-primary">Welcome to  Bootstrap Framework in Angular</h1>
+
+    <button mat-button>Basic</button>
+    <button mat-button color="primary">Primary</button>
+    <button mat-button color="accent">Accent</button>
+    <button mat-button color="warn">Warn</button>
+    <button mat-button disabled>Disabled</button>
+
+<h1 class="c1">{{title}}</h1>
+<h3>Learn ngStyle</h3>
+<div [ngStyle] = "{'background-color': 'green'}" > this is green DIV</div>
+<div [ngStyle] = "{'background-color': bgColor}" > this is dynamic color : {{bgColor}} DIV</div>
+<div [ngStyle] = "{'color': txtColor == 'orange' ? 'orange' : txtColor}" > this is conditional color : {{txtColor}} DIV</div>
+
+<h2>Learn ngIf</h2>
+<div *ngIf="success_msg; then updated_msg else error_msg"></div>
+<ng-template #updated_msg><div class="bg-success"> user added successfully </div></ng-template>
+<ng-template #error_msg ><div class="bg-warning"> user was not added </div></ng-template>
+<h2>Learn Switch with number</h2>
+<div [ngSwitch] = "tax">
+  <div *ngSwitchCase="10"> Display tax is 10% </div>
+  <div *ngSwitchCase="15"> Display tax is 15% </div>
+  <div *ngSwitchCase="20"> Display tax is 20% </div>
+  <div *ngSwitchCase="30"> Display tax greater than 30% </div>
+  <div *ngSwitchDefault>Display tax less than 10%</div>
+</div>
+
+<h2>Learn Switch with string</h2>
+<div [ngSwitch] = "shop">
+  <div *ngSwitchCase="'footware'"> Display footware store </div>
+  <div *ngSwitchCase="'mobile'"> Display mobile store </div>
+  <div *ngSwitchCase="'eletrical'"> Display electrical store </div>
+  <div *ngSwitchCase="'cloth'"> Display clothing store </div>
+  <div *ngSwitchDefault>Display general store</div>
+</div>
+
+<h2>Learn ngFor</h2>
+
+<ul>
+  <li *ngFor="let contact of contacts; index as i; first as f; last as l; even as e; odd as o">
+    {{i}} {{contact.firstName}} {{contact.lastName}}
+    <div *ngIf="f" class="bg-info"> {{i}} {{contact.firstName}} {{contact.lastName}} first record</div>
+    <div *ngIf="l" class="bg-dark text-white">{{i}} {{contact.firstName}} {{contact.lastName}} last record</div>
+    
+  </li>
+</ul>
+
+<h2>Learn ngFor</h2>
+
+<ul>
+  <li *ngFor="let contact of contacts; index as i; first as f; last as l; even as e; odd as o">
+    <div *ngIf="e" class="bg-secondary">{{i}} {{contact.firstName}} {{contact.lastName}}</div>
+    <div *ngIf="o" class="bg-light">{{i}} {{contact.firstName}} {{contact.lastName}}</div>
+  </li>
+</ul>

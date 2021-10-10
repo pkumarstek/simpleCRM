@@ -1,0 +1,20 @@
+<p>clients works! used router Link</p>
+
+<h4>static Link:</h4> 
+<a [routerLink] = "'/user'">User List</a>
+<h4>grid having the dynamic links</h4>
+<table>
+    <th>Client Id</th>
+    <th>FirstName</th>
+    <th>LastName</th>
+    <tr *ngFor = "let client of clientList">
+        <td>{{client.clientId}}</td>
+        <td>{{client.firstName}}</td>
+        <td>{{client.lastName}}</td>
+        <!--<td><a [routerLink]="['/edit', client.clientId]">Edit</a> | <a [routerLink]="['/delete',client.clientId]">Delete</a></td>-->
+        <td><a [routerLink]="['/users',16,'edit', client.clientId]">Edit</a> | <a [routerLink]="['/delete',client.clientId]">Delete</a></td>
+    </tr>
+</table>
+
+/user/16/edit/10
+
